@@ -14,19 +14,21 @@ const refs = {
 refs.startTimerBtn.addEventListener('click', onStartTimerBtn);
 refs.startTimerBtn.setAttribute('disabled', '');
 
+const setedDate = [];
 const fpOptions = {
-  enableTime: true,
-  time_24hr: true,
-  defaultDate: new Date(),
-  minuteIncrement: 1,
-  onClose(selectedDates) {
-      setedDate = selectedDates[0];
-      if (setedDate.getTime() <= fpOptions.defaultDate.getTime()) {
-          Notiflix.Notify.failure('Please choose a date in the future', {position: 'center'});
-      } else {
-          refs.startTimerBtn.removeAttribute('disabled', '');
-      }
-  },
+    enableTime: true,
+    time_24hr: true,
+    defaultDate: new Date(),
+    minuteIncrement: 1,
+    onClose(selectedDates) {
+        setedDate = selectedDates[0];
+        if (setedDate.getTime() <= fpOptions.defaultDate.getTime()) {
+             Notiflix.Notify.failure('Please choose a date in the future', {position: 'center'});
+         
+        } else {
+            refs.startTimerBtn.removeAttribute('disabled', '');
+        } 
+    },
 }
 
 flatpickr(refs.dateInput, fpOptions);
