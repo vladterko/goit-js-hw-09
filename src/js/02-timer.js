@@ -14,7 +14,7 @@ const refs = {
 refs.startTimerBtn.addEventListener('click', onStartTimerBtn);
 refs.startTimerBtn.setAttribute('disabled', '');
 
-const setedDate = [];
+let setedDate = [];
 const fpOptions = {
     enableTime: true,
     time_24hr: true,
