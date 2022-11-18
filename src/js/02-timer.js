@@ -23,7 +23,7 @@ const fpOptions = {
     onClose(selectedDates) {
         setedDate = selectedDates[0];
         if (setedDate.getTime() <= fpOptions.defaultDate.getTime()) {
-             Notiflix.Notify.failure('Please choose a date in the future', {position: 'center'});
+             Notiflix.Notify.failure('Please choose a date in the future');
          
         } else {
             refs.startTimerBtn.removeAttribute('disabled', '');
